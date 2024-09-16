@@ -6,6 +6,7 @@ using Sample.Features.Products.Commands.Update;
 using Sample.Features.Products.Dtos;
 using Sample.Features.Products.Queries.Get;
 using Sample.Features.Products.Queries.List;
+using Sample.Notifications;
 using Sample.Persistence;
 using System.Reflection;
 
@@ -28,17 +29,26 @@ app.MapGet("/products/{id:guid}", async(Guid id,ISender mediatr) => {
     if(product == null) return Results.NotFound();
     return Results.Ok<ProductDto>(product);
 });
+
 //list
 app.MapGet("/products", async(ISender mediatr) => {
+    
     var products = await mediatr.Send(new ListProductQuery());
+
     return Results.Ok<List<ProductDto>>(products);
 });
+
 //create
-app.MapPost("/products", async (CreateProductCommand command,ISender mediatr) => {
+app.MapPost("/products", async (CreateProductCommand command,IMediator mediatr) => {
     var productId = await mediatr.Send(command);
+
     if (productId == Guid.Empty) return Results.BadRequest();
+
+    await mediatr.Publish(new ProductCreatedNotification(productId));
+
     return Results.Created($"/products/{productId}", new { id = productId });
 });
+
 //delete
 app.MapDelete("/products/{id:guid}", async (Guid id,ISender mediatr) => { 
     await mediatr.Send(new DeleteProductCommand(id));
