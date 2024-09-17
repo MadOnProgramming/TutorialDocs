@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS", "CQRS\Sample\CQRS.csproj", "{34E25C76-6AC7-4BA0-9673-78EFD39E6ECC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalExceptionHandling", "GlobalExceptionHandling\GlobalExceptionHandling.csproj", "{135D9707-A1CA-4BF1-963C-372BC34C24E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34E25C76-6AC7-4BA0-9673-78EFD39E6ECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34E25C76-6AC7-4BA0-9673-78EFD39E6ECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34E25C76-6AC7-4BA0-9673-78EFD39E6ECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34E25C76-6AC7-4BA0-9673-78EFD39E6ECC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{135D9707-A1CA-4BF1-963C-372BC34C24E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{135D9707-A1CA-4BF1-963C-372BC34C24E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{135D9707-A1CA-4BF1-963C-372BC34C24E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{135D9707-A1CA-4BF1-963C-372BC34C24E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92D5DF1E-6927-42F9-97DA-AAEFCC8F17C7}
+	EndGlobalSection
+EndGlobal
