@@ -1,0 +1,6 @@
+@Validation_With_Mediatr_And_FluentValidation_HostAddress = http://localhost:5038
+
+GET {{Validation_With_Mediatr_And_FluentValidation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

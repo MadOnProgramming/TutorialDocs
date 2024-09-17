@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS", "CQRS\Sample\CQRS.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalExceptionHandling", "GlobalExceptionHandling\GlobalExceptionHandling.csproj", "{135D9707-A1CA-4BF1-963C-372BC34C24E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validation_With_Mediatr_And_FluentValidation", "Validation_With_Mediatr_And_FluentValidation\Validation_With_Mediatr_And_FluentValidation.csproj", "{40EE1097-8D52-4757-9632-E2BA639A46E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentValidations_Sample", "FluentValidations_Sample\FluentValidations_Sample.csproj", "{37266883-8B6D-460A-BFB1-0FEF9EBD4C32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{135D9707-A1CA-4BF1-963C-372BC34C24E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{135D9707-A1CA-4BF1-963C-372BC34C24E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{135D9707-A1CA-4BF1-963C-372BC34C24E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40EE1097-8D52-4757-9632-E2BA639A46E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40EE1097-8D52-4757-9632-E2BA639A46E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40EE1097-8D52-4757-9632-E2BA639A46E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40EE1097-8D52-4757-9632-E2BA639A46E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37266883-8B6D-460A-BFB1-0FEF9EBD4C32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37266883-8B6D-460A-BFB1-0FEF9EBD4C32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37266883-8B6D-460A-BFB1-0FEF9EBD4C32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37266883-8B6D-460A-BFB1-0FEF9EBD4C32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

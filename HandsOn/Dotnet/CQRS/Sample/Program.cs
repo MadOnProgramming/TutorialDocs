@@ -1,5 +1,9 @@
+using CQRS;
+using CQRS.Behaviours;
+using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Sample.Behaviours;
 using Sample.Features.Products.Commands.Create;
 using Sample.Features.Products.Commands.Delete;
 using Sample.Features.Products.Commands.Update;
@@ -13,8 +17,28 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+//For adding application db context
 builder.Services.AddDbContext<AppDbContext>();
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+
+//For adding behaviours to mediatr pipeline
+builder.Services.AddMediatR(cfg =>
+{
+    cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+
+    //for adding request/response logging behaviour
+    cfg.AddOpenBehavior(typeof(RequestResponseLoggingBehaviour<,>));
+
+    //for adding validation behaviour
+    cfg.AddOpenBehavior(typeof(ValidationBehaviour<,>));
+});
+
+//For registering validators
+builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+
+//For registering global exception handler
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -74,6 +98,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseExceptionHandler();
 
 app.UseAuthorization();
 
